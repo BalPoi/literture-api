@@ -42,6 +42,9 @@ public class LiteratureService {
         literature.setPageNum(newLiterature.getPageNum());
         literature.setPublicationDate(newLiterature.getPublicationDate());
         literature.setType(newLiterature.getType());
+        literature.setPublisher(newLiterature.getPublisher());
+        literature.setAuthors(newLiterature.getAuthors());
+        literature.setGenres(newLiterature.getGenres());
 
         return literatureRepository.save(literature);
     }
