@@ -7,12 +7,11 @@ import javax.persistence.*;
 public class Language {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "language_id")
     private long id;
 
-    //FIXME: createLiterature() add same languages to the table. Make column unique.
-    @Column(name = "language")
+    @Column(name = "language", unique = true)
     private String language;
 
     public Language() {

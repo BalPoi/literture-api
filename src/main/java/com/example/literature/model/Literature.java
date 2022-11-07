@@ -9,8 +9,7 @@ import java.util.Set;
 public class Literature {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "literature_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "title")
@@ -30,6 +29,7 @@ public class Literature {
     private Date publicationDate;
 
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "publisher_id")
     private Publisher publisher;
 
 
