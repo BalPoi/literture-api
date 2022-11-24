@@ -1,11 +1,30 @@
-Слои приложения:
-API 			- ...controller.RestLiteratureController.java
-Бизнес-логика 	- ...service.LiteratureService.java
-Хранение данных	- LiteratureDB.mv.db
+# Literature API
 
-Endpoints:
-POST 	/literature 				-- Добавление новой записи
-Пример:
+### Project setup
+
+```
+mvn verify
+```
+
+### Run project
+
+```
+mvn spring-boot:run
+```
+
+### Application layers
+
+* API 			    - ...controller.RestLiteratureController.java
+* Бизнес-логика 	- ...service.LiteratureService.java
+* Хранение данных	- LiteratureDB.mv.db
+
+### Endpoints
+
+* `POST 	/literature 				-- Добавление новой записи`
+
+Example:
+
+```
 POST http://localhost:8080/api/literature
 BODY(JSON):
 {
@@ -19,9 +38,14 @@ BODY(JSON):
     "authors": ["author4", "author2", "author3"],
     "genres": ["genre3", "genre2"]
 }
-GET		/literature 				-- Возвращает все забиси.
-GET		/literature/{id}			-- Возвращает записи с указанным параметром ну и так далее.
-Пример:
+```
+
+* `GET		/literature 				-- Возвращает все записи`
+* `GET		/literature/{id}			-- Возвращает записи с указанным параметром`
+
+Example:
+
+```
 GET http://localhost:8080/api/literature/1
 RESPONSE:
 {
@@ -67,15 +91,17 @@ RESPONSE:
         }
     ]
 }
-GET		/literature/title/{title}
-GET		/literature/synopsis/{synopsis}
-GET		/literature/language/{lang}
-GET		/literature/author/{author}
-GET		/literature/genre/{genre}
-GET		/literature/publisher/{publisher}
-GET		/literature/dateBetween/{date1},{date2}
-GET		/literature/dateBefore/{date}
-GET		/literature/dateAfter/{date}
-GET		/literature/{literatureId}
-PUT		/literature/{literatureId}
-DELETE	/literature/{literatureId}
+```
+
+* `GET		/literature/title/{title}`
+* `GET		/literature/synopsis/{synopsis}`
+* `GET		/literature/language/{lang}`
+* `GET		/literature/author/{author}`
+* `GET		/literature/genre/{genre}`
+* `GET		/literature/publisher/{publisher}`
+* `GET		/literature/dateBetween/{date1},{date2}`
+* `GET		/literature/dateBefore/{date}`
+* `GET		/literature/dateAfter/{date}`
+* `GET		/literature/{literatureId}`
+* `PUT		/literature/{literatureId}`
+* `DELETE	/literature/{literatureId}`
